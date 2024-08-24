@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <title>Вход в Крипто Империя</title>
     <style>
         body {
@@ -70,7 +71,7 @@
 </head>
 <body>
     <div class="login-container">
-        <h2 id="title_sign">Приветствую, !</h2>
+        <h2 id="title_sign">Здарова, !</h2>
         <form>
             <div class="form-group">
                 <label for="username">Логин</label>
@@ -87,7 +88,6 @@
             <span id="user_data">Твой айди:</span>
         </div>
     </div>
-    <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
         Telegram.WebApp.onEvent('mainButtonClicked', function(){
         	tg.sendData("some string that we need to send"); 
