@@ -70,7 +70,7 @@
 </head>
 <body>
     <div class="login-container">
-        <h2>Вход в Крипто Империя</h2>
+        <h2 id="title_sign">Приветствую, !</h2>
         <form>
             <div class="form-group">
                 <label for="username">Логин</label>
@@ -84,13 +84,19 @@
         </form>
         <div class="login-footer">
             <p>Нет аккаунта? <a href="#">Зарегистрироваться</a></p>
-            <span id="user_data">Hello</span>
+            <span id="user_data">Твой айди:</span>
         </div>
     </div>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
+        Telegram.WebApp.onEvent('mainButtonClicked', function(){
+        	tg.sendData("some string that we need to send"); 
+        	//при клике на основную кнопку отправляем данные в строковом виде
+        });
         span = document.getElementById("user_data")
-        span.textContent = tg.initData
+        tittle = document.getElementById("title_sign")
+        tittle.innerText = `Приветствую, ${tg.initDataUnsafe.user.first_name}!`
+        span.innerText = `Твой айди: ${tg.initDataUnsafe.user.id}`
     </script>
 </body>
 </html>
