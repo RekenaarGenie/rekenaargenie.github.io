@@ -71,7 +71,7 @@
 </head>
 <body>
     <div class="login-container">
-        <h2 id="title_sign">Здарова, !</h2>
+        <h2 id="title_sign">Здравия желаю, !</h2>
         <form>
             <div class="form-group">
                 <label for="username">Логин</label>
@@ -81,7 +81,7 @@
                 <label for="password">Пароль</label>
                 <input type="password" id="password" name="password" placeholder="Введите ваш пароль" required>
             </div>
-            <input type="submit" value="Войти">
+            <input type="submit" onclick="sendMessage()" value="Войти">
         </form>
         <div class="login-footer">
             <p>Нет аккаунта? <a href="#">Зарегистрироваться</a></p>
