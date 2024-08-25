@@ -71,7 +71,7 @@
 </head>
 <body>
     <div class="login-container">
-        <h2 id="title_sign">Здравия jelayu, !</h2>
+        <h2 id="title_sign">Приветствую, !</h2>
         <form>
             <div class="form-group">
                 <label for="username">Логин</label>
@@ -98,6 +98,9 @@
         tittle = document.getElementById("title_sign")
         tittle.innerText = `Приветствую, ${tg.initDataUnsafe.user.first_name}!`
         span.innerText = `Твой айди: ${tg.initDataUnsafe.user.id}`
+        document.body.style.backgroundColor = '#1e1e1e'
+        document.body.style.backgroundColor = tg.backgroundColor
+        
     </script>
     <script>
     const token = '7321690711:AAGC0FDwSodg-2gG4lxUyU-3QbTwLl1llXM';
