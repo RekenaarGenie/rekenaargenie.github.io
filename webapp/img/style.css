@@ -1,1 +1,97 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+:root {
+    --navheight: 50px;
+    --navheight-bottom: 75px;
+    --active-nav: #212121;
+    --background-color: #222222;
+    --nav-bg-color: #151515;
+    --text-color: #dae2e3;
+    --active-text-color: #d9cf1a;
+    --transition-time: 0.3s;
+}
+body {
+    position: relative;
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--background-color);
+    overflow: hidden;
+    background: linear-gradient(135deg, rgba(34,34,34,1) 0%,rgba(48,48,48,1) 47%,rgba(43,43,43,1) 51%,rgba(34,34,34,1) 100%);
+}
+.count_table {
+    width: 70%;
+    height: var(--navheight);
+    background-color: var(--nav-bg-color);
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
 
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+.count_table .user_pic {
+    background-color: aquamarine;
+    height: calc(var(--navheight) - 10px);
+    width: calc(var(--navheight) - 10px);
+    border-radius: 100%;
+    margin-left: 40px;
+}
+#game-container {
+    display: flex;
+    /* background-color: var(--background-color); */
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - var(--navheight));
+    width: 100%;
+}
+
+.footer_navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    background-color: var(--nav-bg-color);
+    height: var(--navheight-bottom);
+    width: 90%;
+    position: fixed;
+    bottom: 10px;
+    border-radius: 15px;
+    overflow: hidden;
+}
+.footer_navigation div {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    position: static;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    transition: var(--transition-time);
+}
+.footer_navigation div span {
+    color: var(--text-color);
+    transition: var(--transition-time);
+}
+.footer_navigation div img {
+    height: 30px;
+    width: 30px;
+    margin-bottom: 10px;
+    transition: var(--transition-time);
+}
+.active_screen img, .active_screen span {
+    filter: invert(10%) sepia(100%) saturate(1000%);
+}
+.active_screen {
+    background-color: var(--active-nav);
+}
