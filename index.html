@@ -100,6 +100,41 @@
         span.innerText = `Твой айди: ${tg.initDataUnsafe.user.id}`
         document.body.style.backgroundColor = '#1e1e1e'
         document.body.style.backgroundColor = tg.backgroundColor
+
+        // Исходный цвет
+        var a = "#1e1e1e";
+        
+        // Функция для преобразования HEX в RGB
+        function hexToRgb(hex) {
+            var bigint = parseInt(hex.slice(1), 16);
+            var r = (bigint >> 16) & 255;
+            var g = (bigint >> 8) & 255;
+            var b = bigint & 255;
+        
+            return { r: r, g: g, b: b };
+        }
+        
+        // Функция для преобразования RGB обратно в HEX
+        function rgbToHex(r, g, b) {
+            return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+        }
+        
+        // Функция для увеличения яркости
+        function lightenColor(hex, percent) {
+            var rgb = hexToRgb(hex);
+        
+            // Увеличение яркости на заданный процент
+            rgb.r = Math.min(255, Math.floor(rgb.r * (1 + percent / 100)));
+            rgb.g = Math.min(255, Math.floor(rgb.g * (1 + percent / 100)));
+            rgb.b = Math.min(255, Math.floor(rgb.b * (1 + percent / 100)));
+        
+            return rgbToHex(rgb.r, rgb.g, rgb.b);
+        }
+
+        // Пример использования
+        
+        login_cont = document.querySelector(".login-container")
+        login_cont.style.backgroundColor = lightenColor(tg.backgroundColor, 20)
         
     </script>
     <script>
