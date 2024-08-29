@@ -5,6 +5,7 @@
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
 }
+
 :root {
     --navheight: 50px;
     --navheight-bottom: 50px;
